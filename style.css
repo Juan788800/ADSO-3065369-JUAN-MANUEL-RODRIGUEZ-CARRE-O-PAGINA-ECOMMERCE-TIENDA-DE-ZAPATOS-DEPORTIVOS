@@ -1,0 +1,310 @@
+/* =========================
+   VARIABLES CSS
+   ========================= */
+:root {
+  --color-fondo: #f5f8fa;                       /* Color de fondo general */
+  --color: #fff;                                /* Color blanco, usado para textos y fondos */
+  --color-header: #222;                         /* Color de fondo del header */
+  --color-header-text: #fff;                    /* Color de texto en el header */
+  --color-header-cart: #00ff99;                 /* Color especial para el carrito */
+  --color-nav-hover: #00bfff;                   /* Color de hover en navegación */
+  --color-banner-bg: #eaf6ff;                   /* Color de fondo del banner */
+  --color-producto-shadow: red;                 /* Color sombra producto (parece un error, abajo se redefine) */
+  --color-banner-overlay: rgba(34,34,34,0.7);   /* Overlay semitransparente para el texto del banner */
+  --color-banner-cta: #00bfff;                  /* Color del botón CTA en el banner */
+  --color-producto-bg: #f9fafb;                 /* Fondo de la tarjeta de producto */
+  --color-producto-shadow: rgba(0,0,0,0.06);    /* Sombra de la tarjeta de producto */
+  --color-producto-precio: #00bfff;             /* Color del precio del producto */
+  --color-footer-bg: #222;                      /* Fondo del footer */
+  --color-footer-text: #fff;                    /* Color de texto del footer */
+}
+
+/* =========================
+   ESTILOS GENERALES
+   ========================= */
+body {
+    font-family: Arial, sans-serif;              /* Fuente principal */
+    background: var(--color-fondo);              /* Fondo general usando variable */
+    margin: 0;                                   /* Elimina margen por defecto */
+    padding: 0;                                  /* Elimina padding por defecto */
+}
+
+/* =========================
+   HEADER
+   ========================= */
+.header {
+  background: var(--color-header);               /* Fondo del header */
+  color: var(--color-header-text);               /* Color de texto en el header */
+  padding: 16px 0;                               /* Espaciado arriba y abajo */
+  overflow: hidden;                              /* Evita desbordes por floats */
+}
+.header__logo {
+  float: left;                                   /* Logo alineado a la izquierda */
+  margin-left: 24px;                             /* Margen izquierdo */
+}
+.header__logo-img {
+  height: 36px;                                  /* Altura fija para el logo */
+  vertical-align: middle;                        /* Centra verticalmente con el texto */
+}
+.header__logo-text {
+  margin-left: 10px;                             /* Espacio entre imagen y texto */
+  font-size: 1.3rem;                             /* Tamaño de fuente del texto logo */
+  font-weight: bold;                             /* Negrita */
+  letter-spacing: 1px;                           /* Espaciado entre letras */
+  vertical-align: middle;                        /* Centra verticalmente */
+}
+.header__nav {
+  float: right;                                  /* Navegación alineada a la derecha */
+  margin-right: 24px;                            /* Margen derecho */
+}
+.header__nav a {
+  color: var(--color-header-text);               /* Color de texto de los enlaces */
+  text-decoration: none;                         /* Sin subrayado */
+  margin-left: 20px;                             /* Espaciado entre enlaces */
+  font-size: 1rem;                               /* Tamaño de fuente */
+  transition: color 0.2s;                        /* Suaviza el cambio de color al hacer hover */
+}
+.header__nav a:hover {
+  color: var(--color-nav-hover);                 /* Color al pasar el mouse */
+}
+.header__cart {
+  font-weight: bold;                             /* Negrita para el carrito */
+  color: var(--color-header-cart);               /* Color especial para el carrito */
+}
+
+/* =========================
+   BANNER PRINCIPAL
+   ========================= */
+.banner {
+  position: relative;                            /* Posicionamiento relativo para overlay */
+  width: 100%;                                   /* Ocupa todo el ancho */
+  height: 290px;                                 /* Altura fija del banner */
+  background: var(--color-banner-bg);            /* Fondo del banner */
+  overflow: hidden;                              /* Oculta desbordes */
+  margin-bottom: 32px;                           /* Espacio debajo del banner */
+}
+.banner__img {
+  width: 100%;                                   /* Imagen ocupa todo el ancho */
+  height: 100%;                                  /* Imagen ocupa toda la altura */
+  object-fit: cover;                             /* Recorta la imagen para cubrir el área */
+  display: block;                                /* Elimina espacio debajo de la imagen */
+}
+.banner__texto {
+  position: absolute;                            /* Posicionamiento absoluto sobre el banner */
+  top: 32%;                                      /* Distancia desde arriba */
+  left: 8%;                                      /* Distancia desde la izquierda */
+  background: var(--color-banner-overlay);       /* Fondo semitransparente */
+  color: var(--color);                           /* Color de texto blanco */
+  padding: 28px 40px;                            /* Espaciado interno */
+  border-radius: 10px;                           /* Bordes redondeados */
+  max-width: 420px;                              /* Ancho máximo */
+}
+.banner__cta {
+  display: inline-block;                         /* Botón en línea pero con bloque */
+  margin-top: 18px;                              /* Espacio arriba del botón */
+  background: var(--color-banner-cta);           /* Fondo del botón */
+  color: var(--color);                           /* Texto blanco */
+  padding: 12px 28px;                            /* Espaciado interno */
+  border-radius: 5px;                            /* Bordes redondeados */
+  text-decoration: none;                         /* Sin subrayado */
+  font-weight: bold;                             /* Negrita */
+  font-size: 1.08rem;                            /* Tamaño de fuente */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);        /* Sombra suave */
+}
+
+/* =========================
+   PRODUCTOS DESTACADOS
+   ========================= */
+.productos {
+  max-width: 1150px;                             /* Ancho máximo de la sección */
+  margin: 0 auto 32px auto;                      /* Centrado y margen inferior */
+  background: var(--color);                      /* Fondo blanco */
+  border-radius: 20px;                           /* Bordes redondeados */
+  padding: 28px 0 40px 0;                        /* Espaciado interno */
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);       /* Sombra suave */
+}
+.productos__titulo {
+  text-align: center;                            /* Centra el título */
+  margin-bottom: 28px;                           /* Espacio debajo del título */
+  color: #1a1a1a;                                /* Color oscuro */
+  font-size: 2rem;                               /* Tamaño grande */
+  letter-spacing: 1px;                           /* Espaciado entre letras */
+}
+.productos__lista {
+  text-align: center;                            /* Centra los productos */
+}
+.producto {
+  display: inline-block;                         /* Hace que los productos estén en línea */
+  width: 230px;                                  /* Ancho fijo */
+  margin: 0 18px 24px 18px;                      /* Espaciado entre productos */
+  background: var(--color-producto-bg);          /* Fondo de la tarjeta */
+  border-radius: 8px;                            /* Bordes redondeados */
+  box-shadow: 0 1px 7px var(--color-producto-shadow); /* Sombra */
+  vertical-align: top;                           /* Alineación superior */
+  padding: 20px 14px 26px 14px;                  /* Espaciado interno */
+  border: 3px solid black;                       /* Borde negro de 3px */
+}
+.producto__img {
+  width: 100%;                                   /* Imagen ocupa todo el ancho */
+  height: 220px;                                 /* Altura fija */
+  object-fit: cover;                             /* Recorta la imagen para cubrir el área */
+  border-radius: 6px;                            /* Bordes redondeados */
+  background: var(--color-banner-bg);            /* Fondo por si la imagen no carga */
+}
+.producto__nombre {
+  margin: 14px 0 8px 0;                          /* Espaciado arriba y abajo */
+  font-size: 1.13rem;                            /* Tamaño de fuente */
+  color: #222;                                   /* Color oscuro */
+  font-weight: bold;                             /* Negrita */
+}
+.producto__precio {
+  color: var(--color-producto-precio);           /* Color del precio */
+  font-weight: bold;                             /* Negrita */
+  margin-bottom: 14px;                           /* Espacio debajo del precio */
+  font-size: 1.03rem;                            /* Tamaño de fuente */
+}
+.producto__btn {
+  background: var(--color-header);               /* Fondo del botón */
+  color: var(--color);                           /* Texto blanco */
+  border: none;                                  /* Sin borde */
+  padding: 9px 20px;                             /* Espaciado interno */
+  border-radius: 4px;                            /* Bordes redondeados */
+  cursor: pointer;                               /* Cursor de mano */
+  font-size: 1rem;                               /* Tamaño de fuente */
+  transition: background 0.2s;                   /* Suaviza el cambio de fondo */
+}
+.producto__btn:hover {
+  background: var(--color-banner-cta);           /* Color de fondo al pasar el mouse */
+  color: var(--color);                           /* Texto blanco */
+}
+.producto:hover {
+  transform: scale(1.05);                        /* Agranda la tarjeta al hacer hover */
+  box-shadow: 0 4px 15px var(--color-producto-shadow); /* Sombra más fuerte al hacer hover */
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+.footer {
+  background: var(--color-footer-bg, #222);      /* Fondo del footer */
+  color: var(--color-footer-text, #fff);         /* Color de texto */
+  padding: 32px 0 12px 0;                        /* Espaciado interno */
+  text-align: center;                            /* Centra el texto */
+  font-size: 1rem;                               /* Tamaño de fuente */
+}
+.footer__contacto {
+  max-width: 400px;                              /* Ancho máximo del bloque de contacto */
+  margin: 0 auto;                                /* Centra el bloque */
+  list-style: none;                              /* Quita los puntos de la lista */
+}
+.footer__contacto li {
+  margin-bottom: 10px;                           /* Espacio entre elementos de contacto */
+}
+.footer__titulo {
+  font-size: 1.3rem;                             /* Tamaño del título */
+  margin-bottom: 12px;                           /* Espacio debajo del título */
+  letter-spacing: 1px;                           /* Espaciado entre letras */
+}
+.footer__info {
+  list-style: none;                              /* Quita los puntos de la lista */
+  padding: 0;                                    /* Quita el padding por defecto */
+  margin: 0 0 18px 0;                            /* Margen inferior */
+  font-size: 1rem;                               /* Tamaño de fuente */
+}
+.footer__info li {
+  margin-bottom: 7px;                            /* Espacio entre líneas */
+}
+.footer__redes {
+  margin: 10px 0 0 0;                            /* Espacio arriba de los iconos */
+}
+.footer__icono {
+  font-size: 1.4rem;                             /* Tamaño de los iconos */
+  margin: 0 10px;                                /* Espacio entre iconos */
+  color: var(--color);                           /* Color blanco */
+  text-decoration: none;                         /* Sin subrayado */
+  transition: color 0.2s;                        /* Suaviza el cambio de color */
+}
+.footer__icono:hover {
+  color: var(--color-nav-hover, #00bfff);        /* Color al pasar el mouse */
+}
+.footer__legal {
+  border-top: 1px solid #333;                    /* Línea superior */
+  margin-top: 18px;                              /* Espacio arriba de la línea */
+  padding-top: 10px;                             /* Espacio dentro del bloque legal */
+  color: #bbb;                                   /* Color gris claro */
+  font-size: 0.95rem;                            /* Tamaño de fuente */
+}
+
+/* =========================
+   RESPONSIVE PARA MÓVILES
+   ========================= */
+@media (max-width: 700px) {
+  .footer__columna {
+    display: block;                              /* Columnas en bloque */
+    width: 90%;                                  /* Ancho del 90% */
+    margin: 0 auto 24px auto;                    /* Centrado y margen inferior */
+    text-align: center;                          /* Centra el texto */
+  }
+  .footer__contenedor {
+    text-align: center;                          /* Centra el contenedor */
+  }
+}
+
+/* =========================
+   MENÚ HAMBURGUESA
+   ========================= */
+.header__hamburger {
+  display: none;                                 /* Oculto por defecto */
+  background: none;                              /* Sin fondo */
+  border: none;                                  /* Sin borde */
+  font-size: 2rem;                               /* Tamaño del icono */
+  color: var(--color);                           /* Color blanco */
+  position: absolute;                            /* Posicionamiento absoluto */
+  top: 18px;                                     /* Distancia desde arriba */
+  right: 24px;                                   /* Distancia desde la derecha */
+  cursor: pointer;                               /* Cursor de mano */
+  z-index: 1001;                                 /* Encima de otros elementos */
+}
+
+/* =========================
+   RESPONSIVE EXTRA PEQUEÑO
+   ========================= */
+@media (max-width: 400px) {
+  .header {
+    position: relative;                          /* Necesario para menú hamburguesa */
+  }
+  .header__logo, .header__nav {
+    float: none;                                 /* Quita el float */
+    display: block;                              /* Ocupa todo el ancho */
+    text-align: center;                          /* Centra el contenido */
+    margin: 0;                                   /* Sin margen */
+  }
+  .header__hamburger {
+    display: block;                              /* Muestra el botón hamburguesa */
+  }
+  .header__nav {
+    display: none;                               /* Oculta el menú por defecto */
+    background: var(--color-header);             /* Fondo del menú */
+    position: absolute;                          /* Posicionamiento absoluto */
+    top: 60px;                                   /* Debajo del header */
+    left: 0;                                     /* Alineado a la izquierda */
+    width: 100%;                                 /* Ocupa todo el ancho */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);      /* Sombra */
+    z-index: 1000;                               /* Encima de otros elementos */
+  }
+  .header__nav--open {
+    display: block;                              /* Muestra el menú cuando está abierto */
+  }
+  .header__nav a {
+    display: block;                              /* Enlaces en bloque */
+    padding: 14px 0;                             /* Espaciado interno */
+    border-bottom: 1px solid #333;               /* Línea separadora */
+    margin: 0;                                   /* Sin margen */
+  }
+  .banner__texto {
+    max-width: 280px;                            /* Limita el ancho del bloque de texto */
+    padding: 12px 20px;                          /* Reduce el espacio interno */
+    font-size: 0.9rem;                           /* Letra más pequeña */
+    margin: 0 auto;                              /* Centra el bloque horizontalmente */
+  }
+}
