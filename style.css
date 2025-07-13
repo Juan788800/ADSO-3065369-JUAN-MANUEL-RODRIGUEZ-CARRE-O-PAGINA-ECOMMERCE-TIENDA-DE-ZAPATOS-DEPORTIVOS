@@ -91,11 +91,11 @@ body {
 }
 .banner__texto {
   position: absolute;                            /* Posicionamiento absoluto sobre el banner */
-  top: 32%;                                      /* Distancia desde arriba */
+  top: 10%;                                      /* Distancia desde arriba */
   left: 8%;                                      /* Distancia desde la izquierda */
   background: var(--color-banner-overlay);       /* Fondo semitransparente */
   color: var(--color);                           /* Color de texto blanco */
-  padding: 28px 40px;                            /* Espaciado interno */
+  padding: 15px 40px;                            /* Espaciado interno */
   border-radius: 10px;                           /* Bordes redondeados */
   max-width: 420px;                              /* Ancho máximo */
 }
@@ -109,7 +109,7 @@ body {
   text-decoration: none;                         /* Sin subrayado */
   font-weight: bold;                             /* Negrita */
   font-size: 1.08rem;                            /* Tamaño de fuente */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);        /* Sombra suave */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);        /* Sombra suave */                                   /* Centrado horizontal */
 }
 
 /* =========================
