@@ -58,6 +58,12 @@ body {
   font-weight: bold;
 }
 
+i {
+  color: var(--color-fondo);
+  display: none;
+  width: 40px;
+  height: auto;
+}
 
 .header__logo-text::first-letter{
   font-size: 3rem;
@@ -67,7 +73,7 @@ body {
 .header__nav {
   width: 65%;
   display: flex;
-  gap: 1cm;
+  gap: 0.6cm;
   justify-content: space-between;
 }
 
@@ -123,11 +129,12 @@ body {
   text-decoration: none;
   font-weight: bold;
   font-size: 1.4rem;
-  transition: transform 0.3s ease-in-out
+  transition: transform 0.3s ease-in-out, background 0.3s ease
 }
 
 .banner__cta:hover {
   transform: scale(1.2);
+  background-color: #00ff99;
 }
 
 .productos {
@@ -284,9 +291,13 @@ body {
     justify-content: start;
   }
 
-
+  i {
+    display: block;
+    
+  }
 
   .header__nav {
+    display: none;
     flex-flow: row wrap;
     justify-content: right;
     gap: 8px;
