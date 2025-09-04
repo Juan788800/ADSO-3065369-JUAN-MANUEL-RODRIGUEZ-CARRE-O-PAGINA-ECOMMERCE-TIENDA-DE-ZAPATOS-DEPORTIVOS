@@ -54,7 +54,7 @@ body {
 
 .header__logo-text {
   letter-spacing: 2px;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 
@@ -71,6 +71,7 @@ i {
 }
 
 .header__nav {
+  margin-right: 2%;
   width: 65%;
   display: flex;
   gap: 0.6cm;
@@ -80,7 +81,7 @@ i {
 .header__nav a {
   color: var(--color-header-text);
   text-decoration: none;  
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   transition: color 0.2s;
 }
 
@@ -106,7 +107,7 @@ i {
 }
 
 .banner__texto {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   top: 0;
   width: 100%;
   height: 100%;
@@ -128,13 +129,13 @@ i {
   border-radius:30px;
   text-decoration: none;
   font-weight: bold;
-  font-size: 1.4rem;
-  transition: transform 0.3s ease-in-out, background 0.3s ease
+  font-size: 1.5rem;
+  transition: transform 0.3s ease-in-out, background 0.5s ease
 }
 
 .banner__cta:hover {
   transform: scale(1.2);
-  background-color: #00ff99;
+  background-color: #38c089;
 }
 
 .productos {
@@ -153,7 +154,7 @@ i {
 .productos__titulo {
   margin-bottom: 28px;
   color: #1a1a1a;
-  font-size: 2rem;
+  font-size: 3rem;
 }
 
 .productos__lista {
@@ -397,7 +398,8 @@ i {
 }
 
   .header__nav {
-    width: 70%;
+    margin-right: 1%;
+    width: 60%;
     justify-content: space-evenly;
   }
 
