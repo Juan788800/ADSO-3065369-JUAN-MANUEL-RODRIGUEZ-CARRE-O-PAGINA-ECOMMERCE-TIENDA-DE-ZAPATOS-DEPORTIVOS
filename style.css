@@ -79,7 +79,7 @@ i {
 
 .header__nav a {
   color: var(--color-header-text);
-  text-decoration: none;
+  text-decoration: none;  
   font-size: 1.2rem;
   transition: color 0.2s;
 }
